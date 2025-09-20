@@ -14,7 +14,7 @@ workspace_list = workspaces.split("\n")
 number_of_workspaces = len(workspace_list) - 2
 # Create target workspace if it necessary
 if target_workspace > number_of_workspaces:
-    sub.run(["wmctrl","-n",f"{target_workspace}"])
+    sub.run(["wmctrl","-n",f"{target_workspace + 1}"])
 
 # Check current workspace
 for i, workspace in enumerate(workspace_list):
