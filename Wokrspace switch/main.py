@@ -2,12 +2,14 @@
 import subprocess as sub
 
 # Set your target workspace here starting from 1
-target_workspace = 3
+target_workspace = 2
 
 # Read you previous workspace
-with open("current.txt", "r") as f:
-    previous_workspace = f.read()
-
+try:
+    with open("current.txt", "r") as f:
+        previous_workspace = f.read()
+except FileNotFoundError:
+    previous_workspace = 1
 # Checking opened workspaces
 workspaces = sub.check_output(["wmctrl","-d"], text=True)
 workspace_list = workspaces.split("\n")
