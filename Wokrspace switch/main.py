@@ -4,9 +4,13 @@ import sys
 
 # Set your target workspace here starting from 1
 try:
-    target_workspace = int(sys.argv[1])
-except IndexError:
+    sys_target_workspace = int(sys.argv[1])
+except:
+    sys_target_workspace = 2
+if sys_target_workspace < 2 or sys_target_workspace > 20:
     target_workspace = 2
+else:
+    target_workspace = sys_target_workspace
 # Read you previous workspace
 try:
     with open("current.txt", "r") as f:
