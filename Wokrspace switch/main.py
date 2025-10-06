@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 import subprocess as sub
+import sys
 
 # Set your target workspace here starting from 1
-target_workspace = 5
-
+try:
+    target_workspace = int(sys.argv[1])
+except IndexError:
+    target_workspace = 2
 # Read you previous workspace
 try:
     with open("current.txt", "r") as f:
